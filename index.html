@@ -46,6 +46,54 @@
 
 
     <style>
+
+      @media (max-width: 768px) {
+        header#topnav {
+            padding: 10px;
+        }
+      
+        .bg-home {
+            height: auto;
+            min-height: 100vh;
+        }
+      
+        .home-content {
+            padding: 20px;
+            text-align: center;
+        }
+      
+        .home-title {
+            font-size: 28px;
+        }
+      
+        .home-subtitle {
+            font-size: 18px;
+        }
+      
+        .home-desc {
+            font-size: 16px;
+        }
+      
+        .vertical-content {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+      
+        .card {
+            margin-bottom: 20px;
+        }
+      
+        .card-img-top {
+            height: auto;
+            max-height: 220px;
+        }
+      
+        .footer-container {
+            text-align: center;
+            flex-direction: column;
+        }
+      }
+      
         /* Optional: Additional styling for demonstration */
     .bg-home {
         position: relative;
@@ -185,6 +233,12 @@
         margin-top: 10px;
         /* Align icons according to their parent column */
       }
+
+      .footer-center .social-icons,
+  .footer-left .social-icons,
+  .footer-right .social-icons {
+    justify-content: flex-start !important;
+  }
       /* Ensure that in the center column, social icons are centered */
       .footer-center .social-icons {
         justify-content: center;
@@ -199,6 +253,36 @@
         color: #333;
         text-decoration: none;
         font-size: 20px;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Pastikan konten awalnya rata kiri */
+      }
+      
+      .footer-column {
+        width: 32%; /* Atur lebar setiap kolom sesuai keinginan */
+      }
+      
+      /* Media Query untuk perangkat dengan layar kecil (misalnya max-width: 768px) */
+      @media (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          align-items: flex-start; /* Semua kolom akan mulai dari kiri */
+        }
+
+       @media (max-width: 768px) {
+          .bg-home {
+            height: auto;
+            min-height: 100vh;
+          }
+        }
+        .footer-column {
+          width: 100%;
+          text-align: left; /* Pastikan teks di setiap kolom rata kiri */
+          margin-bottom: 20px; /* Jarak antar kolom di tampilan mobile */
+        }
       }
 
       .home-content {
@@ -221,7 +305,7 @@
         <div class="container">
             <!-- Logo container-->
             <div>
-                <a href="index-1.html" class="logo">
+                <a href="index.html" class="logo">
                     <img src="images/logo-dark.png" class="logo-dark" alt="" height="50" width="50">
                 </a>
             </div>
