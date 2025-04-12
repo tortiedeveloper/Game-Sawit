@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Sawit - Plant, Nurture, Harvest Explore the World of Palm Oil</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="" />
+
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+    <!-- Pe-icon-7 icon -->
+    <link rel="stylesheet" type="text/css" href="css/pe-icon-7-stroke.css">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+    <!--Material Icon -->
+    <link rel="stylesheet" type="text/css" href="css/materialdesignicons.min.css" />
+
+    <!-- magnific pop-up -->
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
+
+    <!--Slider-->
+    <link rel="stylesheet" href="css/owl.carousel.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <link rel="stylesheet" href="css/owl.transitions.css" />
+
+    <!-- MENU CUSTOM css -->
+    <link rel="stylesheet" type="text/css" href="css/menu.css">
+
+    <!-- Custom  Css -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <style>
+        /* Optional: Additional styling for demonstration */
+    .bg-home {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      .bg-video img {
+        /* The image will cover entirely the container */
+        object-fit: cover;
+      }
+    
+        .bg-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 2;
+        }
+    
+        .home-center {
+          position: relative;
+          z-index: 3;
+        }
+    
+        .language-switcher {
+          margin-left: 20px;
+        }
+
+        .features-img img {
+            height: 600px !important;
+            width: 100% !important;
+            object-fit: cover !important;
+          }
+
+          .features-img img {
+            margin-bottom: 20px;
+            max-height: 400px;
+            object-fit: cover;
+            width: 100%;
+          }
+
+        /* Only enlarge the first letter in the first paragraph of history */
+        .enlarge-first::first-letter {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: #000;
+        margin-right: 4px;
+      }
+
+      /* Optional styling for centering the card and adding extra spacing */
+        .title-card {
+        width: fit-content;
+        margin: 40px auto;
+      }
+
+      /* Ensure images fill their container and maintain aspect ratio */
+    .card-img-top {
+        height: 220px;
+        object-fit: cover;
+      }
+      /* Optional: adjust the title card styling */
+      .title-card {
+        width: fit-content;
+        margin: 0 auto;
+      }
+      /* Ensure all cards grow equally */
+      .card {
+        /* h-100 ensures the card fills the height of its parent column */
+        height: 100%;
+      }
+
+      .title-heading {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .title-desc {
+      font-size: 18px;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+    .title-desc b {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+        40% {transform: translateY(-10px);}
+        60% {transform: translateY(-5px);}
+      }
+
+    .section-background {
+        background-color: #f2f2f2;
+        padding: 60px 30px;
+      }
+
+      footer {
+        background-color: #f8f9fa;
+        padding: 40px 20px;
+      }
+      .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      .footer-column {
+        flex: 1;
+        min-width: 250px;
+        padding: 0 10px;
+      }
+      .footer-left {
+        text-align: left;
+      }
+      .footer-center {
+        text-align: center;
+      }
+      .footer-right {
+        text-align: right;
+      }
+      .footer-column h4 {
+        margin-bottom: 10px;
+        font-size: 20px;
+      }
+      .footer-column p {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+      .social-icons {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+        /* Align icons according to their parent column */
+      }
+      /* Ensure that in the center column, social icons are centered */
+      .footer-center .social-icons {
+        justify-content: center;
+      }
+      .footer-left .social-icons {
+        justify-content: flex-start;
+      }
+      .footer-right .social-icons {
+        justify-content: flex-end;
+      }
+      .social-icons a {
+        color: #333;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      .home-content {
+        background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+        padding: 20px;
+        border-radius: 8px;
+        color: #fff; /* White text for clear contrast */
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Subtle text-shadow for extra clarity */
+      }
+    
+      </style>
+
+
+
+</head>
+
+<body>
+
+    <header id="topnav" class="defaultscroll fixed-top navbar-sticky">
+        <div class="container">
+            <!-- Logo container-->
+            <div>
+                <a href="index-1.html" class="logo">
+                    <img src="images/logo-dark.png" class="logo-dark" alt="" height="50" width="50">
+                </a>
+            </div>
+            <!-- End Logo container-->
+            <div class="menu-extras">
+                <div class="menu-item">
+                    <!-- Mobile menu toggle-->
+                    <a class="navbar-toggle">
+                        <div class="lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </a>
+                    <!-- End mobile menu toggle-->
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+   <!-- HOME Section -->
+  <section class="bg-home home-4 bg-dark position-relative" id="home">
+    <!-- Background Image Instead of Video -->
+    <div class="bg-video" style="position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 100%; z-index: 1;">
+      <img src="images/bg-home.jpg" alt="Background Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+
+    <!-- Overlay Gelap -->
+    <div class="bg-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); z-index: 2;"></div>
+
+    <!-- Konten Home -->
+    <div class="home-center" style="position: relative; z-index: 3;">
+      <div class="home-desc-center">
+        <div class="container">
+          <div class="row vertical-content">
+            <div class="col-lg-7">
+              <div class="home-content mt-4">
+                <h4 class="home-subtitle">Game Sawit :</h4>
+                <h2 class="home-title mt-4">"Plant, Nurture, Harvest Explore the World of Palm Oil!"</h2>
+                <p class="home-desc mt-4 f-17">Experience smart and engaging gameplay that blends agriculture, business strategy, and environmental awareness</p>
+                <div class="mt-4">
+                  <a href="">
+                    <img src="images/google-play.png" class="mt-4" height="50" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+              <div class="home-image text-lg-right mt-4">
+                <!-- Additional content or image can be added here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END HOME -->
+
+
+<!-- SECTION: The History of Game Sawit -->
+<section class="section-background" id="history">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="title-box text-center">
+            <div class="card rounded shadow title-card">
+              <div class="card-body text-center">
+                <h4 class="title-heading m-0">The History of Game Sawit</h4>
+                <div class="title-desc mt-4 text-left">
+                  <p class="text-muted enlarge-first">
+                    Game Sawit was first conceptualized in 2021 by <b>Stella Sabrina</b>, a doctoral student in the Agricultural and Rural Development Communication program at IPB University. Prior to entering academia, Stella had over 15 years of experience in the media industry, with an educational background in Communication Studies. Her interest in agricultural issues, particularly palm oil, grew along with her academic journey and field observations.
+                  </p>
+                  <p class="text-muted">
+                    Noticing the low interest among younger generations in agricultural issues and sustainable palm oil, Stella initiated the idea of creating an innovative educational medium: Game Sawit. This game is specifically designed for millennials and Gen Z as a fun and interactive learning tool about the sustainable palm oil process.
+                  </p>
+                  <p class="text-muted">
+                    The content of Game Sawit was developed based on direct field observations, interviews with farmers and industry players, as well as a review of literature on best practices in sustainable palm oil management. The game illustrates various stages of the palm oil value chain—from nursery, planting, maintenance, harvesting, to processing and marketing—using an approach that emphasizes environmental, social, and economic aspects.
+                  </p>
+                  <p class="text-muted">
+                    In the development process, the game’s technology was built by a reliable tech team. This technological support has enabled Game Sawit to emerge as a modern digital learning tool that aligns with the learning styles of today's youth.
+                  </p>
+                  <p class="text-muted">
+                    The main objective of Game Sawit is to educate and raise awareness among younger generations about the importance of sustainable palm oil practices and to encourage them to care more about agricultural and environmental issues.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- SECTION: PAGE 1 (Features) -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="title-box text-center">
+        <div class="title-border mt-5">
+          <span class="title-icon">
+            <i class="pe-7s-angle-down"></i>
+          </span>
+        </div>
+        <h4 class="title-heading mt-5">What's in the Game Sawit</h4>
+        <p class="title-desc text-muted mt-4">
+          <b>1. Educational Content Based on Palm Oil Production Stages</b>
+        </p>
+        <p class="title-desc text-muted mt-4">
+          Game Sawit illustrates the palm oil industry value chain in a sequential and systematic way, covering:
+        </p>
+      </div>
+  
+      <!-- Baris pertama (3 fitur di atas) -->
+      <div class="row mt-5 pt-4 justify-content-center">
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img1.jpg" data-lightbox="features" data-title="Nursery Stage">
+              <img src="images/features/landscape-img1.jpg" class="card-img-top" alt="Interactive AI-Based Discussions">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Nursery Stage</h4>
+              <p class="card-text text-muted">
+                Players are guided to select and care for high-quality oil palm seedlings. This content emphasizes the importance of superior seeds and proper nursery techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img2.jpg" data-lightbox="features" data-title="Planting">
+              <img src="images/features/landscape-img2.jpg" class="card-img-top" alt="Ideal for Busy Professionals">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Planting</h4>
+              <p class="card-text text-muted">
+                The planting process is simulated by considering planting distance, land conditions, and environmentally friendly planting methods.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img3.jpg" data-lightbox="features" data-title="Maintenance">
+              <img src="images/features/landscape-img3.jpg" class="card-img-top" alt="Easy and Practical Access to Information">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Maintenance</h4>
+              <p class="card-text text-muted">
+                Players learn about fertilization, integrated pest management (IPM), and sustainable maintenance to ensure plant productivity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Baris kedua (3 fitur di bawah) -->
+      <div class="row mt-4 justify-content-center">
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img4.jpg" data-lightbox="features" data-title="Harvesting">
+              <img src="images/features/landscape-img4.jpg" class="card-img-top" alt="Data & Trend Analysis">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Harvesting</h4>
+              <p class="card-text text-muted">
+                Players are taught the right time to harvest and techniques that do not damage the plants.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img5.jpg" data-lightbox="features" data-title="Processing">
+              <img src="images/features/landscape-img5.jpg" class="card-img-top" alt="Sustainable Practices Insights">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Processing</h4>
+              <p class="card-text text-muted">
+                The game presents the process of turning fresh fruit bunches (FFB) into crude palm oil (CPO), including principles of energy efficiency and waste management.
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img6.jpg" data-lightbox="features" data-title="Distribution and Marketing">
+              <img src="images/features/landscape-img6.jpg" class="card-img-top" alt="Realistic AI Video Chat Feature">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Distribution and Marketing</h4>
+              <p class="card-text text-muted">
+                Players also explore how palm oil products are marketed for both domestic use and export.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <!-- PAGE 1 -->
+
+    <!-- START PAGE 2 -->
+   <section class="section-background" id="features">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">            
+      </div>
+
+      <div class="title-box text-center">
+      <div class="title-border mt-5">
+        <span class="title-icon">
+          <i class="pe-7s-angle-down"></i>
+        </span>
+      </div>
+      <h4 class="title-heading mt-5">What's in the Game Sawit</h4>
+      <p class="title-desc text-muted mt-4">
+        <b>2. Content on Sustainability Values</b>
+      </p>
+      <p class="title-desc text-muted mt-4">
+        The game not only presents the production process but also integrates key sustainability principles:
+      </p>
+
+      <!-- Baris pertama (3 fitur di atas) -->
+      <div class="row mt-5 pt-4 justify-content-center">
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img8.jpg" data-lightbox="features" data-title="Environmental Aspects">
+              <img src="images/features/landscape-img8.jpg" class="card-img-top" alt="Interactive AI-Based Discussions">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Environmental Aspects</h4>
+              <p class="card-text text-muted">
+                Protection of peatlands, biodiversity conservation, and management of palm oil waste such as liquid waste and empty fruit bunches.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img9.jpg" data-lightbox="features" data-title="Social Aspects">
+              <img src="images/features/landscape-img9.jpg" class="card-img-top" alt="Ideal for Busy Professionals">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Social Aspects</h4>
+              <p class="card-text text-muted">
+                 Farmers' rights, community empowerment, the role of women in the palm oil sector, and public participation.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card rounded shadow mt-4 overflow-hidden">
+            <a href="images/features/landscape-img10.jpg" data-lightbox="features" data-title="Economic Aspects">
+              <img src="images/features/landscape-img10.jpg" class="card-img-top" alt="Easy and Practical Access to Information">
+            </a>
+            <div class="card-body text-center">
+              <h4 class="card-title f-19">Economic Aspects</h4>
+              <p class="card-text text-muted">
+                Economic benefits for farmers and the palm oil industry's contribution to rural development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+      <!-- END PAGE 2 -->
+
+        <!-- START PAGE 3 -->
+   <section class="section" id="features">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">            
+      </div>
+
+      <div class="title-box text-center">
+        <div class="title-border mt-5">
+          <span class="title-icon">
+            <i class="pe-7s-angle-down"></i>
+          </span>
+        </div>
+        <h4 class="title-heading mt-5">What's in the Game Sawit</h4>
+        <p class="title-desc text-muted mt-4">
+          <b>3. Interactive Features and Gamification</b>
+        </p>
+        <p class="title-desc text-muted mt-4">
+            To engage younger audiences, the game includes features such as:
+        </p>
+      
+        <!-- Baris pertama (2 fitur di atas) -->
+        <div class="row mt-5 pt-4 justify-content-center">
+          <div class="col-lg-6">
+            <div class="card rounded shadow mt-4 overflow-hidden">
+              <a href="images/features/landscape-img11.jpg" data-lightbox="features" data-title="Mini Games">
+                <img src="images/features/landscape-img11.jpg" class="card-img-top" alt="Interactive AI-Based Discussions">
+              </a>
+              <div class="card-body text-center">
+                <h4 class="card-title f-19">Mini Games</h4>
+                <p class="card-text text-muted">
+                    Challenges such as palm oil knowledge quizzes, planting simulations, and harvesting competitions.
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-lg-6">
+            <div class="card rounded shadow mt-4 overflow-hidden">
+              <a href="images/features/landscape-img12.jpg" data-lightbox="features" data-title="Narrative and Characters">
+                <img src="images/features/landscape-img12.jpg" class="card-img-top" alt="Ideal for Busy Professionals">
+              </a>
+              <div class="card-body text-center">
+                <h4 class="card-title f-19">Narrative and Characters</h4>
+                <p class="card-text text-muted">
+                    Fictional characters such as young farmers, researchers, and environmental activists guide players through the educational storyline.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Baris kedua (2 fitur di bawah) -->
+        <div class="row mt-4 justify-content-center">
+          <div class="col-lg-6">
+            <div class="card rounded shadow mt-4 overflow-hidden">
+              <a href="images/features/landscape-img13.jpg" data-lightbox="features" data-title="Levels and Points">
+                <img src="images/features/landscape-img13.jpg" class="card-img-top" alt="Data & Trend Analysis">
+              </a>
+              <div class="card-body text-center">
+                <h4 class="card-title f-19">Levels and Points</h4>
+                <p class="card-text text-muted">
+                    Players level up based on their understanding and sustainability-oriented decisions.
+                </p>
+              </div>
+            </div>
+          </div>
+      
+          <div class="col-lg-6">
+            <div class="card rounded shadow mt-4 overflow-hidden">
+              <a href="images/features/landscape-img14.jpg" data-lightbox="features" data-title="Final Score and Feedback">
+                <img src="images/features/landscape-img14.jpg" class="card-img-top" alt="Sustainable Practices Insights">
+              </a>
+              <div class="card-body text-center">
+                <h4 class="card-title f-19">Final Score and Feedback</h4>
+                <p class="card-text text-muted">
+                     Players receive feedback on how sustainable their decisions and actions were throughout the game.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- END PAGE 3 -->
+      
+      <a href="#home" data-scroll="" class="back-to-top" id="back-to-top" style="display: inline; line-height: 30px;">
+        <i class="mdi mdi-chevron-up fs-24 text-white"></i>
+      </a>
+
+      <footer>
+        <div class="container">
+          <div class="footer-container">
+            <div class="footer-column footer-left">
+              <h4>Tortie Kreatif Teknologi</h4>
+              <p>A technology company focused on innovation and technological development, especially in application development and digital content creation.</p>
+            </div>
+            <div class="footer-column footer-center">
+              <h4>Contact</h4>
+              <p>Phone: +62 81111100981</p>
+              <p>Email: contact@tkraf.com</p>
+            </div>
+            <div class="footer-column footer-right">
+              <h4>Connect With Us</h4>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-dark py-2">
+            <div class="container">
+              <p class="mb-1 mt-2 text-center text-light">
+                © 2025 Game Sawit All Rights Reserved.
+              </p>
+            </div>
+          </div>
+      </footer>
+
+      
+
+
+    <!-- JAVASCRIPTS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrollspy.min.js"></script>
+    <!-- owl-carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script>
+        var a = 0;
+        $(window).scroll(function() {
+            var oTop = $('#counter').offset().top - window.innerHeight;
+            if (a == 0 && $(window).scrollTop() > oTop) {
+                $('.counter-value').each(function() {
+                    var $this = $(this),
+                        countTo = $this.attr('data-count');
+                    $({
+                        countNum: $this.text()
+                    }).animate({
+                            countNum: countTo
+                        },
+
+                        {
+
+                            duration: 2000,
+                            easing: 'swing',
+                            step: function() {
+                                $this.text(Math.floor(this.countNum));
+                            },
+                            complete: function() {
+                                $this.text(this.countNum);
+                                //alert('finished');
+                            }
+
+                        });
+                });
+                a = 1;
+            }
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+<script>
+  lightbox.option({
+    'resizeDuration': 200,
+    'wrapAround': true
+  })
+</script>
+
+</body>
+
+</html>
