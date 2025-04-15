@@ -313,6 +313,91 @@
         color: #fff; /* White text for clear contrast */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Subtle text-shadow for extra clarity */
       }
+
+      <!-- style bg video -->
+
+      /* Video background container */
+    .bg-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    /* Iframe styling */
+    .bg-video iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(2.0);
+      width: auto;
+      height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      border: 0;
+      display: block;
+    }
+    /* Overlay gelap di atas video */
+    .bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+    /* Play button overlay */
+    .play-button-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+    #playButton {
+      background: rgba(0, 0, 0, 0.6);
+      border: none;
+      border-radius: 50%;
+      padding: 20px;
+      cursor: pointer;
+    }
+    #playButton i {
+      color: white;
+      font-size: 2rem;
+    }
+    /* Home content (tetap sama seperti sebelumnya) */
+    .home-center {
+      position: relative;
+      z-index: 3;
+      color: white;
+    }
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .col-lg-7, .col-lg-4, .offset-lg-1 {
+      padding: 15px;
+    }
+    /* Sederhana saja untuk tampilan demo */
+    .home-content h4,
+    .home-content h2,
+    .home-content p {
+      margin: 10px 0;
+    }
+
+    /* Center the audio player container below the footer */
+      #audioPlayerContainer {
+        text-align: center;
+        margin-top: 20px;
+      }
     
       </style>
 
@@ -353,7 +438,7 @@
     <!-- Video Background dari Iframe -->
     <div class="bg-video" style="position: absolute; top: 0; left: 0; overflow: hidden; width: 100%; height: 100%; z-index: 1;">
         <iframe 
-            src="https://iframe.mediadelivery.net/embed/71625/cdbc7e67-4b3d-45d2-9bab-690d54ab6d38?autoplay=true&loop=true&muted=false&preload=true&responsive=false" 
+            src="https://iframe.mediadelivery.net/embed/71625/cdbc7e67-4b3d-45d2-9bab-690d54ab6d38?autoplay=true&loop=true&muted=true&preload=true&responsive=false" 
             loading="lazy"
             style="position: absolute; top: 50%; left: 50%; 
                    transform: translate(-50%, -50%) scale(2.0); 
@@ -731,6 +816,16 @@
           </div>
       </footer>
 
+      <!-- Audio Player: Positioned below the footer and centered -->
+    <div id="audioPlayerContainer">
+      <audio id="backgroundAudio" controls autoplay loop>
+        <source src="images/audio.wav" type="audio/wav">
+        Browser Anda tidak mendukung elemen audio.
+      </audio>
+    </div>
+
+     
+
       
 
 
@@ -785,6 +880,26 @@
     'resizeDuration': 200,
     'wrapAround': true
   })
+</script>
+
+<!-- JavaScript untuk otomatis memulai pemutaran audio -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var audio = document.getElementById("backgroundAudio");
+    if (audio) {
+      // Mencoba memulai pemutaran audio otomatis
+      var playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(function () {
+            console.log("Audio playing automatically.");
+          })
+          .catch(function (error) {
+            console.log("Autoplay blocked:", error);
+          });
+      }
+    }
+  });
 </script>
 
 </body>
