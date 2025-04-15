@@ -876,7 +876,7 @@
       <!-- Audio Player: Positioned below the footer and centered -->
     <div id="audioPlayerContainer">
       <audio id="backgroundAudio" controls autoplay loop>
-        <source src="images/audio.wav" type="audio/wav">
+        <source src="images/audio.mp3" type="audio/wav">
         Browser Anda tidak mendukung elemen audio.
       </audio>
     </div>
@@ -968,7 +968,9 @@
     // Memulai pemutaran audio
     var audio = document.getElementById("gameAudio");
     if (audio) {
-      audio.play();
+      audio.play().catch(function(error) {
+        console.error("Error saat memutar audio:", error);
+      });
     }
   });
 </script>
