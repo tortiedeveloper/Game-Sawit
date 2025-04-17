@@ -56,66 +56,128 @@
       padding: 20px;
       background: #f0f0f0;
     }
+    /* Splash screen container with slide down animation */
     .splash {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(237, 241, 245, 0.9); /* Background dengan transparansi */
+      background: rgba(75, 85, 95, 0.9); /* Semi-transparent background */
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: #ddc9c9;
       text-align: center;
-      z-index: 9999;
+      z-index: 1000;
+      /* Initially hidden above the viewport */
+      transform: translateY(-100%);
+      animation: slideDown 1s ease-out forwards;
     }
+
+    /* Keyframes to animate the splash screen sliding down automatically */
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    /* Styling for the splash content */
     .splash h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
+      color: #fff;
     }
+
     .splash img {
       width: 60%;
       max-width: 400px;
       margin-bottom: 20px;
-      border: 5px solid #fff9f9;
+      border: 5px solid #fff;
       border-radius: 10px;
     }
+
     .splash button {
-      padding: 10px 90px;
+      padding: 10px 50px;
       font-size: 1.2rem;
       border: none;
       border-radius: 5px;
       background: #fff;
-      color: #000000;
+      color: #333;
       cursor: pointer;
       transition: background 0.3s ease, transform 0.3s ease;
     }
+
     .splash button:hover {
       background: #ddd;
       transform: scale(1.05);
     }
 
-      .bg-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    /* Main content styles (simulate a website behind the splash screen) */
+    .main-content {
+      padding: 20px;
+      margin-top: 100vh;
+      background: #f0f0f0;
+      height: auto;
+      overflow: auto;
+    }
+
+      /* Reset dasar */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; }
+
+    /* Container video background */
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    /* Styling default untuk iframe */
+    .bg-video iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Media query untuk perangkat dengan aspect ratio lebih tinggi (misalnya, smartphone dalam mode portrait) */
+    @media (max-aspect-ratio: 16/9) {
+      .bg-video iframe {
+        width: auto;
         height: 100%;
-        object-fit: cover;
-        z-index: 1;
       }
-  
-      .bg-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 2;
-      }
+    }
+
+    /* Contoh konten agar terlihat di atas video */
+    .content {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+
+    /* Contoh konten agar bisa dilihat di atas video */
+    .content {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
   
 
       @media (max-width: 768px) {
@@ -357,7 +419,7 @@
       }
 
       .home-content {
-        background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+        background: rgba(177, 143, 143, 0.6); /* Semi-transparent dark overlay */
         padding: 20px;
         border-radius: 8px;
         color: #fff; /* White text for clear contrast */
@@ -876,7 +938,7 @@
       <!-- Audio Player: Positioned below the footer and centered -->
     <div id="audioPlayerContainer">
       <audio id="backgroundAudio" controls autoplay loop>
-        <source src="images/audio.mp3" type="audio/wav">
+        <source src="images/audio.mp3" type="audio/mpeg">
         Browser Anda tidak mendukung elemen audio.
       </audio>
     </div>
@@ -966,7 +1028,7 @@
     // Mengizinkan scrolling halaman
     document.body.style.overflow = "auto";
     // Memulai pemutaran audio
-    var audio = document.getElementById("gameAudio");
+    var audio = document.getElementById("backgroundAudio");
     if (audio) {
       audio.play().catch(function(error) {
         console.error("Error saat memutar audio:", error);
@@ -974,6 +1036,8 @@
     }
   });
 </script>
+
+ 
 
 </body>
 
