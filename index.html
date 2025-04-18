@@ -217,7 +217,7 @@
             text-align: center;
             flex-direction: column;
         }
-      }
+      
       
         /* Optional: Additional styling for demonstration */
     .bg-home {
@@ -360,8 +360,8 @@
       }
 
       .footer-center .social-icons,
-  .footer-left .social-icons,
-  .footer-right .social-icons {
+      .footer-left .social-icons,
+      .footer-right .social-icons {
     justify-content: flex-start !important;
   }
       /* Ensure that in the center column, social icons are centered */
@@ -417,8 +417,6 @@
         color: #fff; /* White text for clear contrast */
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Subtle text-shadow for extra clarity */
       }
-
-      <!-- style bg video -->
 
       /* Video background container */
     .bg-video {
@@ -510,6 +508,17 @@
       .card-img-top:hover {
         transform: scale(1.1);
       }
+
+      .navbar-sticky.scrolled {
+        background-color: #fff;
+        transition: background-color 0.3s ease;
+      }
+
+      header.fixed-top {
+        background-color: #fff;
+      }
+
+    
       </style>
 
 
@@ -570,8 +579,9 @@
 
    <!-- Konten Home -->
    <div class="home-center" style="position: relative; z-index: 3;">
+    <div class="bg-overlay-color"></div>
     <div class="home-desc-center">
-      <div class="container">
+      <div class="container slidero">
         <div class="row vertical-content">
           <div class="col-lg-7">
             <div class="home-content mt-4">
